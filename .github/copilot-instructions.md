@@ -8,7 +8,7 @@
 
 - **言語**: Python 3.13
 - **クラウド**: AWS（Lambda, API Gateway, DynamoDB, EventBridge）
-- **IaC**: AWS CDK (Python)
+- **IaC**: AWS CDK (TypeScript)
 - **CI/CD**: GitHub Actions
 
 ## 共通ルール

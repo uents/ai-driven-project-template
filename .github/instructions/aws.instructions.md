@@ -1,5 +1,5 @@
 ---
-applyTo: "**/*.py,infra/**"
+applyTo: "**/*.py,infra/**,**/*.ts"
 ---
 
 # AWS 指示

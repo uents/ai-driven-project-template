@@ -12,7 +12,7 @@
 | コンピューティング | AWS Lambda (Python 3.13) |
 | データベース | Amazon DynamoDB |
 | イベントバス | Amazon EventBridge |
-| IaC | AWS CDK (Python) |
+| IaC | AWS CDK (TypeScript) |
 | CI/CD | GitHub Actions |
 | 監視 | Amazon CloudWatch |
 

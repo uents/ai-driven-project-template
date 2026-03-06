@@ -23,6 +23,8 @@ coverage.xml
 
 # CDK
 cdk.out/
+infra/cdk/node_modules/
+infra/cdk/dist/
 
 # IDE
 .idea/

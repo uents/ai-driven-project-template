@@ -11,7 +11,7 @@ tasks:
     desc: 開発環境のセットアップ
     cmds:
       - "{{.PYTHON}} -m venv .venv"
-      - .venv/bin/pip install -e ".[dev,cdk]"
+      - .venv/bin/pip install -e ".[dev]"
 
   # === Lint ===
   lint:
@@ -57,20 +57,32 @@ tasks:
       - task: test:integration
 
   # === CDK ===
+  cdk:install:
+    desc: CDK 依存関係をインストール
+    dir: infra/cdk
+    cmds:
+      - npm install
+
+  cdk:build:
+    desc: CDK TypeScript をビルド
+    dir: infra/cdk
+    cmds:
+      - npm run build
+
   cdk:synth:
     desc: CDK テンプレートを合成
     dir: infra/cdk
     cmds:
-      - cdk synth
+      - npx cdk synth
 
   cdk:diff:
     desc: CDK 差分を確認
     dir: infra/cdk
     cmds:
-      - cdk diff
+      - npx cdk diff
 
   cdk:deploy:
     desc: CDK デプロイを実行
     dir: infra/cdk
     cmds:
-      - cdk deploy --all --require-approval broadening
+      - npx cdk deploy --all --require-approval broadening
