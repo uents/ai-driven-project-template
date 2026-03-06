@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# 仮想環境
+.venv/
+venv/
+ENV/
+
+# テスト
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+
+# CDK
+cdk.out/
+
+# IDE
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# 環境変数
+.env
+.env.local

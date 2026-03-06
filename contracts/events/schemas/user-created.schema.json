@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UserCreated",
+  "description": "ユーザー作成時に発行されるイベントのスキーマ",
+  "type": "object",
+  "required": ["user_id", "name", "email", "created_at"],
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "作成されたユーザーのID"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 50,
+      "description": "ユーザー名"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "メールアドレス"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "作成日時（ISO 8601形式）"
+    }
+  },
+  "additionalProperties": false
+}

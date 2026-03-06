@@ -1,0 +1,13 @@
+@startuml system-context
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+title システムコンテキスト図
+
+Person(user, "エンドユーザー", "システムを利用するユーザー")
+System(system, "ユーザー管理システム", "ユーザーの登録・管理を行うマイクロサービスシステム")
+System_Ext(email, "メールサービス", "確認メール等の送信")
+
+Rel(user, system, "APIリクエスト", "HTTPS")
+Rel(system, email, "メール送信依頼", "EventBridge → SES")
+
+@enduml

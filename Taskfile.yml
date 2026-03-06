@@ -1,0 +1,76 @@
+# https://taskfile.dev
+
+version: "3"
+
+vars:
+  PYTHON: python3
+
+tasks:
+  # === セットアップ ===
+  setup:
+    desc: 開発環境のセットアップ
+    cmds:
+      - "{{.PYTHON}} -m venv .venv"
+      - .venv/bin/pip install -e ".[dev,cdk]"
+
+  # === Lint ===
+  lint:
+    desc: コードのLintを実行
+    cmds:
+      - ruff check .
+
+  lint:fix:
+    desc: Lint の自動修正を実行
+    cmds:
+      - ruff check --fix .
+
+  format:
+    desc: コードフォーマットを実行
+    cmds:
+      - ruff format .
+
+  typecheck:
+    desc: 型チェックを実行
+    cmds:
+      - mypy services/ infra/
+
+  # === テスト ===
+  test:
+    desc: すべてのユニットテストを実行
+    cmds:
+      - pytest services/ -v --cov --cov-report=term-missing
+
+  test:integration:
+    desc: 統合テストを実行
+    cmds:
+      - pytest tests/integration/ -v
+
+  test:e2e:
+    desc: E2Eテストを実行
+    cmds:
+      - pytest tests/e2e/ -v
+
+  test:all:
+    desc: すべてのテストを実行
+    cmds:
+      - task: test
+      - task: test:integration
+
+  # === CDK ===
+  cdk:synth:
+    desc: CDK テンプレートを合成
+    dir: infra/cdk
+    cmds:
+      - cdk synth
+
+  cdk:diff:
+    desc: CDK 差分を確認
+    dir: infra/cdk
+    cmds:
+      - cdk diff
+
+  cdk:deploy:
+    desc: CDK デプロイを実行
+    dir: infra/cdk
+    cmds:
+      - cdk deploy --all --require-approval broadening
