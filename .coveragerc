@@ -1,0 +1,19 @@
+[run]
+source = services
+omit =
+    **/tests/*
+    **/__pycache__/*
+    **/test_*.py
+branch = True
+
+[report]
+show_missing = True
+fail_under = 80
+exclude_lines =
+    pragma: no cover
+    def __repr__
+    if __name__ == .__main__
+    raise NotImplementedError
+
+[html]
+directory = htmlcov

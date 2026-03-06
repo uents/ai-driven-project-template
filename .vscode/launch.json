@@ -13,7 +13,26 @@
       "type": "debugpy",
       "request": "launch",
       "module": "pytest",
-      "args": ["-v", "${file}"],
+      "args": [
+        "-c", "${workspaceFolder}/pytest.ini",
+        "--cov-config=${workspaceFolder}/.coveragerc",
+        "-v",
+        "${file}"
+      ],
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Python: pytest (カバレッジ付き)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "args": [
+        "-c", "${workspaceFolder}/pytest.ini",
+        "--cov",
+        "--cov-config=${workspaceFolder}/.coveragerc",
+        "--cov-report=term-missing",
+        "-v"
+      ],
       "console": "integratedTerminal"
     }
   ]
