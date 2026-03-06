@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "charliermarsh.ruff",
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "github.copilot-chat",
+    "jebbs.plantuml",
+    "bierner.markdown-mermaid",
+    "redhat.vscode-yaml",
+    "task.vscode-task"
+  ]
+}

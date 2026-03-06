@@ -1,0 +1,29 @@
+@startuml component
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+title コンポーネント図 - ユーザーサービス
+
+Container_Boundary(api, "API Gateway") {
+    Component(apigw, "API Gateway", "REST API", "HTTPリクエストの受付・ルーティング")
+}
+
+Container_Boundary(user_service, "ユーザーサービス") {
+    Component(create_user, "CreateUser Lambda", "Python 3.13", "ユーザー作成処理")
+    Component(get_user, "GetUser Lambda", "Python 3.13", "ユーザー取得処理")
+}
+
+Container_Boundary(data, "データストア") {
+    ComponentDb(dynamodb, "DynamoDB", "NoSQL", "ユーザーデータの永続化")
+}
+
+Container_Boundary(event, "イベントバス") {
+    Component(eventbridge, "EventBridge", "イベントバス", "サービス間イベント連携")
+}
+
+Rel(apigw, create_user, "POST /users")
+Rel(apigw, get_user, "GET /users/{id}")
+Rel(create_user, dynamodb, "PutItem")
+Rel(get_user, dynamodb, "GetItem")
+Rel(create_user, eventbridge, "UserCreated イベント発行")
+
+@enduml

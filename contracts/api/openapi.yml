@@ -1,0 +1,121 @@
+openapi: "3.0.3"
+info:
+  title: ユーザー管理API
+  description: ユーザーの作成・取得を行うREST API
+  version: "1.0.0"
+
+servers:
+  - url: https://api.example.com/v1
+    description: 本番環境
+
+paths:
+  /users:
+    post:
+      summary: ユーザー作成
+      description: 新規ユーザーを作成する
+      operationId: createUser
+      tags:
+        - users
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateUserRequest"
+      responses:
+        "201":
+          description: ユーザー作成成功
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserResponse"
+        "400":
+          description: バリデーションエラー
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "409":
+          description: メールアドレス重複エラー
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /users/{user_id}:
+    get:
+      summary: ユーザー取得
+      description: 指定されたIDのユーザー情報を取得する
+      operationId: getUser
+      tags:
+        - users
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+          description: ユーザーID
+      responses:
+        "200":
+          description: ユーザー取得成功
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserResponse"
+        "404":
+          description: ユーザーが見つからない
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+components:
+  schemas:
+    CreateUserRequest:
+      type: object
+      required:
+        - name
+        - email
+      properties:
+        name:
+          type: string
+          minLength: 2
+          maxLength: 50
+          description: ユーザー名
+          example: "田中太郎"
+        email:
+          type: string
+          format: email
+          description: メールアドレス
+          example: "tanaka@example.com"
+
+    UserResponse:
+      type: object
+      properties:
+        user_id:
+          type: string
+          format: uuid
+          description: ユーザーID
+        name:
+          type: string
+          description: ユーザー名
+        email:
+          type: string
+          format: email
+          description: メールアドレス
+        created_at:
+          type: string
+          format: date-time
+          description: 作成日時
+
+    ErrorResponse:
+      type: object
+      properties:
+        error_code:
+          type: string
+          description: エラーコード
+        message:
+          type: string
+          description: エラーメッセージ
