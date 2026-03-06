@@ -29,8 +29,7 @@ jobs:
           python-version: "3.13"
       - name: 依存関係のインストール
         run: |
-          pip install -r requirements.txt
-          pip install -r requirements-dev.txt
+          pip install -e ".[dev]"
       - name: ユニットテストの実行
         run: |
           pytest services/ --cov --cov-report=xml
