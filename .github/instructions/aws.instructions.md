@@ -18,12 +18,6 @@ applyTo: "**/*.py,infra/**,**/*.ts"
 - アクセスパターンは `contracts/database/access-patterns.md` を参照すること
 - Single Table Design を採用しているため、PK/SKの設計パターンに従うこと
 
-## CDK
-
-- CDK のスタック定義は `infra/cdk/stacks/` 配下に配置すること
-- L2 Construct を優先的に使用すること
-- リソースの命名規則: `{プロジェクト名}-{環境}-{リソース名}`
-
 ## EventBridge
 
 - イベントスキーマは `contracts/events/schemas/` に定義されたJSON Schemaに準拠すること

@@ -3,7 +3,7 @@ name: git-commit
 description: Conventional Commits 規約に従ったコミットメッセージを作成するスキル。変更内容を適切なタイプ・スコープで表現する
 ---
 
-# Git Conventional Commits スキル
+# Git Commit スキル
 
 ## フォーマット
 
