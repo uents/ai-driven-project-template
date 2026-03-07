@@ -112,7 +112,7 @@ Agentが参照する知識ベース・リファレンス。各スキルは `{ski
 
 | パス | 内容・役割 |
 |---|---|
-| `skills/git-conventional-commits/SKILL.md` | Conventional Commits 形式のコミットメッセージ |
+| `skills/git-commit/SKILL.md` | Conventional Commits 形式のコミットメッセージ |
 | `skills/write-adr/SKILL.md` | Architecture Decision Record の作成方法 |
 | `skills/write-readme/SKILL.md` | README.md の構成・記述ルール |
 

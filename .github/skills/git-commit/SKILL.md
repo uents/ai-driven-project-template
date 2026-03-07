@@ -1,7 +1,6 @@
 ---
-name: git-conventional-commits
-description: Conventional Commits 規約に従ったコミットメッセージを作成するスキル。変更内容を適切なタイプ・スコープで表現する。
-usage: git commit メッセージの作成や既存メッセージのレビューを依頼されたときに使用する。
+name: git-commit
+description: Conventional Commits 規約に従ったコミットメッセージを作成するスキル。変更内容を適切なタイプ・スコープで表現する
 ---
 
 # Git Conventional Commits スキル

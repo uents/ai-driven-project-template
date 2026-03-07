@@ -1,7 +1,6 @@
 ---
 name: write-adr
-description: Architecture Decision Record (ADR) を作成するスキル。技術的意思決定の背景・選択肢・結論を構造化して記録する。
-usage: 新しいアーキテクチャ上の意思決定を記録するよう依頼されたときに使用する。
+description: Architecture Decision Record (ADR) を作成するスキル。技術的意思決定の背景・選択肢・結論を構造化して記録する
 ---
 
 # ADR 作成スキル

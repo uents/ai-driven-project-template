@@ -1,7 +1,6 @@
 ---
 name: write-readme
-description: プロジェクト・サービス・機能の README.md を作成するスキル。対象の種類に応じた適切な構成で README を生成する。
-usage: README.md の新規作成や改善を依頼されたときに使用する。
+description: プロジェクト・サービス・機能の README.md を作成するスキル。対象の種類に応じた適切な構成で README を生成する
 ---
 
 # README 作成スキル
