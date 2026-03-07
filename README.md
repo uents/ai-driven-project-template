@@ -39,7 +39,7 @@ task cdk:deploy    # インフラのデプロイ
 ├── .github/
 │    ├── copilot-instructions.md       # グローバル指示（プロジェクト概要・共通ルール）
 │    ├── instructions/                 # 技術領域別の指示（AWS, Python, テスト）
-│    ├── agents/                       # エージェント定義（設計, 実装, レビュー, テスト）
+│    ├── agents/                       # エージェント定義（{name}.agent.md）
 │    ├── skills/                       # 知識ベース・リファレンス
 │    ├── prompts/                      # 定型プロンプトテンプレート
 │    ├── ISSUE_TEMPLATE/               # イシューテンプレート
@@ -97,14 +97,14 @@ task cdk:deploy    # インフラのデプロイ
 
 #### agents/（役割別エージェント定義）
 
-Copilot Agentの役割別ペルソナ定義。タスクに応じてAgentに「誰として振る舞うか」を指示する。
+Copilot Agentの役割別ペルソナ定義。タスクに応じてAgentに「誰として振る舞うか」を指示する。`{name}.agent.md` 形式で配置する。
 
 | パス | 内容・役割 |
 |---|---|
-| `agents/architect.md` | 設計エージェント：アーキテクチャ判断・設計レビュー用 |
-| `agents/developer.md` | 実装エージェント：コード実装用 |
-| `agents/reviewer.md` | レビューエージェント：コードレビュー用 |
-| `agents/tester.md` | テストエージェント：テスト設計・実装用 |
+| `agents/architect.agent.md` | 設計エージェント：アーキテクチャ判断・設計レビュー用 |
+| `agents/developer.agent.md` | 実装エージェント：コード実装用 |
+| `agents/reviewer.agent.md` | レビューエージェント：コードレビュー用 |
+| `agents/tester.agent.md` | テストエージェント：テスト設計・実装用 |
 
 #### skills/（知識ベース・リファレンス）
 
