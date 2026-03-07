@@ -1,6 +1,12 @@
 {
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "charliermarsh.ruff",
+  "chat.useAgentSkills": true,
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/.pytest_cache": true,
+    "**/cdk.out": true
+  },
+  // Python
   "python.defaultInterpreterPath": ".venv/bin/python",
   "python.analysis.typeCheckingMode": "basic",
   "[python]": {
@@ -9,10 +15,5 @@
       "source.fixAll": "explicit",
       "source.organizeImports": "explicit"
     }
-  },
-  "files.exclude": {
-    "**/__pycache__": true,
-    "**/.pytest_cache": true,
-    "**/cdk.out": true
   }
 }
