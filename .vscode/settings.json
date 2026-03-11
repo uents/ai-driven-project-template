@@ -2,9 +2,12 @@
   "editor.formatOnSave": true,
   "chat.useAgentSkills": true,
   "files.exclude": {
-    "**/__pycache__": true,
-    "**/.pytest_cache": true,
-    "**/cdk.out": true
+    "**/.vscode/**": true,
+    "**/.git/**": true,
+    "**/__pycache__/**": true,
+    "**/.pytest_cache/**": true,
+    "**/.mypy_cache/**": true,
+    "**/cdk.out/**": true
   },
   // Python
   "python.defaultInterpreterPath": ".venv/bin/python",

@@ -2,7 +2,6 @@
 
 ## 参照ドキュメント
 
-- 機能仕様: なし（本ドキュメントが設計の起点）
 - API契約: `contracts/api/openapi.yml` (`createUser`)
 - テーブル定義: `contracts/database/table-definitions.yml`
 - アクセスパターン: `contracts/database/access-patterns.md` (AP-002, AP-005)
