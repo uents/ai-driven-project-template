@@ -90,7 +90,7 @@ docs/adr/
 `docs/adr/README.md` に ADR のインデックスを作成する。
 
 ```markdown
-# Archtecture Decision Records
+# Architecture Decision Records
 
 このディレクトリにプロジェクトの重要な技術的意思決定を記録します。
 
