@@ -1,11 +1,17 @@
 {
   "editor.formatOnSave": true,
-  "chat.useAgentSkills": true,
-  "files.exclude": {
-    "**/__pycache__": true,
-    "**/.pytest_cache": true,
-    "**/cdk.out": true
+  "files.watcherExclude": {
+    "**/.vscode/**": true,
+    "**/.git/**": true,
+    "**/.venv/**": true,
+    "**/__pycache__/**": true,
+    "**/.pytest_cache/**": true,
+    "**/.mypy_cache/**": true,
+    "**/.ruff_cache/**": true,
+    "**/node_modules/**": true,
+    "**/cdk.out/**": true
   },
+  "chat.useAgentSkills": true,
   // Python
   "python.defaultInterpreterPath": ".venv/bin/python",
   "python.analysis.typeCheckingMode": "basic",

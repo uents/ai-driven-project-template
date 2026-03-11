@@ -26,25 +26,29 @@
 
 ```
 {機能名}/
-  ├── spec.md          # 機能仕様
+  ├── __init__.py
+  ├── docs/
+  │   ├── design.md         # 機能設計書
+  │   └── diagrams/
+  │       └── *.pu          # 設計図（PlantUML形式）
   ├── src/
   │   ├── __init__.py
-  │   ├── handler.py   # Lambdaハンドラー
-  │   ├── model.py     # ドメインモデル
-  │   ├── repository.py # データアクセス
-  │   └── tests/
-  │       ├── __init__.py
-  │       ├── test_handler.py
-  │       └── test_repository.py
+  │   ├── handler.py        # Lambdaハンドラー
+  │   └── *.py
+  └── tests/
+      ├── __init__.py
+      ├── test_*.py
+      ├── conftest.py
+      └── test.env
 ```
 
 ### レイヤー責務
 
-| レイヤー | 責務 | 禁止事項 |
-|---|---|---|
-| Handler | リクエスト受付・レスポンス整形 | ビジネスロジック |
-| Model | ドメインロジック・バリデーション | 外部サービスアクセス |
-| Repository | データ永続化 | ビジネスルール |
+| レイヤー   | 責務                             | 禁止事項             |
+| ---------- | -------------------------------- | -------------------- |
+| Handler    | リクエスト受付・レスポンス整形   | ビジネスロジック     |
+| Model      | ドメインロジック・バリデーション | 外部サービスアクセス |
+| Repository | データ永続化                     | ビジネスルール       |
 
 ### 実装コードパターン
 
