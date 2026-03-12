@@ -8,7 +8,7 @@ applyTo: "**/test_*.py,**/tests/**,tests/**"
 
 - すべての機能にはユニットテストを必ず作成すること
 - テストは Given-When-Then パターンで記述すること
-- テスト名は日本語で意図が分かるように命名すること（例: `test_ユーザー作成_正常系`）
+- テスト名は `test_` で始め、テスト内容がわかるように命名すること
 
 ## ユニットテスト
 
@@ -20,7 +20,7 @@ applyTo: "**/test_*.py,**/tests/**,tests/**"
 ### Given-When-Then パターン
 
 ```python
-def test_ユーザー作成_正常系():
+def test_create_user():
     """正しい入力でユーザーが作成されること"""
     # Given: 有効なユーザーデータ
     user_data = {"name": "田中太郎", "email": "tanaka@example.com"}
@@ -72,7 +72,7 @@ def dynamodb_table():
         ("", False),
     ],
 )
-def test_メールアドレスバリデーション(email, expected_valid):
+def test_validate_email(email, expected_valid):
     """各種メールアドレスのバリデーション結果を検証"""
     if expected_valid:
         user = User(name="テスト", email=email)
@@ -88,7 +88,7 @@ def test_メールアドレスバリデーション(email, expected_valid):
 from moto import mock_aws
 
 @mock_aws
-def test_ユーザー保存():
+def test_save_user():
     """ユーザーがDynamoDBに保存されること"""
     dynamodb = boto3.resource("dynamodb", region_name="ap-northeast-1")
     table = dynamodb.create_table(...)  # テーブルセットアップ
